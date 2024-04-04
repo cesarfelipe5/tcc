@@ -3,8 +3,7 @@ from sqlalchemy import create_engine
 import time
 
 # Função para conectar ao banco de dados MySQL
-def conectar_mysql(usuario, senha, host, porta, banco):
-    # A string de conexão pode variar dependendo do conector que você está usando
+def conectar_mysql(usuario, senha, host, banco, porta=3306):
     conexao_string = f'mysql+mysqlconnector://{usuario}:{senha}@{host}:{porta}/{banco}'
     engine = create_engine(conexao_string)
     return engine
@@ -12,7 +11,7 @@ def conectar_mysql(usuario, senha, host, porta, banco):
 # Função para ler os dados da planilha e persistir no MySQL
 def persistir_dados(nome_arquivo, tabela_destino, usuario, senha, host, porta, banco):
     # Conectando ao banco de dados
-    engine = conectar_mysql(usuario, senha, host, porta, banco)
+    engine = conectar_mysql(usuario, senha, host, banco, porta)
     
     # Lendo os dados da planilha
     df = pd.read_excel(nome_arquivo)
@@ -30,7 +29,7 @@ def persistir_dados(nome_arquivo, tabela_destino, usuario, senha, host, porta, b
     print(f"Tempo utilizado para a persistência dos dados: {fim - inicio} segundos.")
 
 # Exemplo de uso
-nome_arquivo = 'caminho_para_sua_planilha.xlsx'  # Atualize para o caminho correto da planilha
+nome_arquivo = '..\\assets\\dados_clientes.xlsx'  # Atualize para o caminho correto da planilha
 tabela_destino = 'cliente'
 usuario = 'root'
 senha = 'Cesar280197'
