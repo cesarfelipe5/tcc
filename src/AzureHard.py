@@ -28,15 +28,22 @@ def persistir_dados_azure(nome_arquivo, tabela_destino, usuario, senha, host, ba
     # Exibindo o tempo utilizado para a operação
     print(f"Tempo utilizado para a persistência dos dados: {fim - inicio} segundos.")
 
-if __name__ == "__main__":
-    # Solicita ao usuário que informe o caminho completo do arquivo
-    nome_arquivo = input("Por favor, informe o caminho completo do arquivo: ")
-    tabela_destino = 'cliente'
-    usuario = 'usuarioTcc'
-    senha = 'senhaTcc135'
-    host = 'tcccesar.mysql.database.azure.com'
-    banco = 'tcccesar'
-    porta = 3306
+# Exemplo de uso
+nome_arquivo = '..\\assets\\dados_clientes.xlsx'  # Substitua pelo caminho correto da sua planilha
+tabela_destino = 'cliente'
+usuario = 'usuarioTcc'
+senha = 'senhaTcc135'
+host = 'tcccesar.mysql.database.azure.com'
+porta = '3306'
+banco = 'tcccesar'
 
-    # Chamando a função para persistir os dados
-    persistir_dados_azure(nome_arquivo, tabela_destino, usuario, senha, host, banco, porta)
+# Exemplo de uso
+# nome_arquivo = 'caminho_para_sua_planilha.xlsx'  # Substitua pelo caminho correto da sua planilha
+# tabela_destino = 'nome_da_tabela_no_mysql_azure'
+# usuario = 'seu_usuario'
+# senha = 'sua_senha'
+# host = 'endereco_do_host_azure_mysql'
+# banco = 'nome_do_banco'
+
+# Chamando a função para persistir os dados
+persistir_dados_azure(nome_arquivo, tabela_destino, usuario, senha, host, banco, porta)

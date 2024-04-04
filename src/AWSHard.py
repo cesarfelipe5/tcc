@@ -28,16 +28,22 @@ def persistir_dados(nome_arquivo, tabela_destino, usuario, senha, host, porta, b
     # Exibindo o tempo utilizado para a operação
     print(f"Tempo utilizado para a persistência dos dados: {fim - inicio} segundos.")
 
+# Exemplo de uso
+nome_arquivo = '..\\assets\\dados_clientes.xlsx'  # Atualize para o caminho correto da planilha
+tabela_destino = 'cliente'
+usuario = 'root'
+senha = 'Cesar280197'
+host = 'tcccesar.cf4uqsaw2by1.us-east-2.rds.amazonaws.com'
+porta = '3306'
+banco = 'tcccesar'
 
-if __name__ == "__main__":
-    # Exemplo de uso
-    nome_arquivo = input("Por favor, informe o caminho completo do arquivo: ")
-    tabela_destino = 'cliente'
-    usuario = 'root'
-    senha = 'Cesar280197'
-    host = 'tcccesar.cf4uqsaw2by1.us-east-2.rds.amazonaws.com'
-    porta = '3306'
-    banco = 'tcccesar'
+# nome_arquivo = 'caminho_para_sua_planilha.xlsx'  # Atualize para o caminho correto da planilha
+# tabela_destino = 'nome_da_tabela_no_mysql'
+# usuario = 'seu_usuario'
+# senha = 'sua_senha'
+# host = 'endereco_do_host_aws'
+# porta = 'porta'
+# banco = 'tccCesar'
 
-    # Chamando a função para persistir os dados
-    persistir_dados(nome_arquivo, tabela_destino, usuario, senha, host, porta, banco)
+# Chamando a função para persistir os dados
+persistir_dados(nome_arquivo, tabela_destino, usuario, senha, host, porta, banco)
